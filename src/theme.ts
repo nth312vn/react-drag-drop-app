@@ -9,5 +9,14 @@ const theme = extendTheme({
       palette: {},
     },
   },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: "none",
+        },
+      },
+    },
+  },
 });
 export default theme;

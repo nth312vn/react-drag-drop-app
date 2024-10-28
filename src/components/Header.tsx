@@ -1,10 +1,10 @@
-import { Box, IconButton } from "@mui/material";
+import { Badge, Box, IconButton, Tooltip, Zoom } from "@mui/material";
 import AppsIcon from "@mui/icons-material/Apps";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import DropdownMenu from "./DropdownMenu";
 import InputSearch from "./InputSearch";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import AvatarHeader from "./AvatarHeader";
 
 export default function Header() {
   return (
@@ -12,6 +12,8 @@ export default function Header() {
     //read docs app bar component
     //override theme
     //code toggle mode
+    //use avatar component
+    //use tooltip component
     <Box sx={{ height: "48px", width: "100%" }}>
       <Box
         sx={{
@@ -116,26 +118,33 @@ export default function Header() {
             <DropdownMenu title="Tạo mới " options={[{ text: "Tạo bảng" }]} />
           </Box>
         </Box>
-        <Box sx={{ display: "flex", alignItems: "center" }}>
-          <Box sx={{ width: "200px", display: { xs: "none", sm: "block" } }}>
+        <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+          <Box
+            sx={{
+              width: "200px",
+              display: { xs: "none", sm: "block" },
+            }}
+          >
             <InputSearch />
           </Box>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            <IconButton>
-              <NotificationsNoneIcon />
-            </IconButton>
+            <Tooltip TransitionComponent={Zoom} title="Notification">
+              <IconButton>
+                <Badge color="primary" variant="dot" invisible={false}>
+                  <NotificationsNoneIcon />
+                </Badge>
+              </IconButton>
+            </Tooltip>
           </Box>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            <IconButton>
-              <HelpOutlineIcon />
-            </IconButton>
+            <Tooltip TransitionComponent={Zoom} title="Help">
+              <IconButton>
+                <HelpOutlineIcon />
+              </IconButton>
+            </Tooltip>
           </Box>
 
-          <Box>
-            <IconButton>
-              <AccountCircleIcon />
-            </IconButton>
-          </Box>
+          <AvatarHeader />
         </Box>
       </Box>
     </Box>

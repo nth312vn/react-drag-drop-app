@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Menu, MenuItem, Button } from "@mui/material";
+import { Box, Menu, MenuItem, Button, ListItemText } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 export interface DropdownMenuProps {
   title: string;
@@ -36,7 +36,7 @@ export default function DropdownMenu(props: DropdownMenuProps) {
         onClick={handleClick}
         endIcon={<KeyboardArrowDownIcon />}
         sx={{
-          textTransform: "none",
+          color: "text.secondary",
         }}
       >
         {title}
@@ -49,8 +49,9 @@ export default function DropdownMenu(props: DropdownMenuProps) {
               option.callBack?.();
             }}
             key={index}
+            dense
           >
-            {option.text}
+            <ListItemText>{option.text}</ListItemText>
           </MenuItem>
         ))}
       </Menu>
