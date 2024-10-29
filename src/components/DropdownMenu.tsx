@@ -36,7 +36,7 @@ export default function DropdownMenu(props: DropdownMenuProps) {
         onClick={handleClick}
         endIcon={<KeyboardArrowDownIcon />}
         sx={{
-          color: "text.secondary",
+          color: "text.primary",
         }}
       >
         {title}

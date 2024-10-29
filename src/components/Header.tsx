@@ -8,12 +8,6 @@ import AvatarHeader from "./AvatarHeader";
 
 export default function Header() {
   return (
-    //change icon to badge component
-    //read docs app bar component
-    //override theme
-    //code toggle mode
-    //use avatar component
-    //use tooltip component
     <Box sx={{ height: "48px", width: "100%" }}>
       <Box
         sx={{
@@ -22,6 +16,8 @@ export default function Header() {
           height: "100%",
           justifyContent: "space-between",
           padding: "8px",
+          backgroundColor: "primary.main",
+          color: "text.primary",
         }}
       >
         <Box
@@ -34,10 +30,10 @@ export default function Header() {
             <IconButton
               sx={{
                 borderRadius: "2px",
+                color: "text.primary",
                 "&:hover": { backgroundColor: "#091E4224" },
                 "&:active": {
                   backgroundColor: "#E9F2FF",
-                  color: "primary.main",
                 },
               }}
               size="small"
@@ -53,8 +49,7 @@ export default function Header() {
               display: "block",
               borderRadius: "2px",
               cursor: "pointer",
-              filter:
-                "brightness(0) saturate(100%) invert(30%) sepia(53%) saturate(323%) hue-rotate(179deg) brightness(91%) contrast(88%)",
+              filter: "unset",
               "&:hover": {
                 backgroundColor: "#091E4224",
               },
@@ -118,7 +113,13 @@ export default function Header() {
             <DropdownMenu title="Tạo mới " options={[{ text: "Tạo bảng" }]} />
           </Box>
         </Box>
-        <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: 1,
+          }}
+        >
           <Box
             sx={{
               width: "200px",
@@ -129,7 +130,7 @@ export default function Header() {
           </Box>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             <Tooltip TransitionComponent={Zoom} title="Notification">
-              <IconButton>
+              <IconButton sx={{ color: "text.primary" }}>
                 <Badge color="primary" variant="dot" invisible={false}>
                   <NotificationsNoneIcon />
                 </Badge>
@@ -138,7 +139,7 @@ export default function Header() {
           </Box>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             <Tooltip TransitionComponent={Zoom} title="Help">
-              <IconButton>
+              <IconButton sx={{ color: "text.primary" }}>
                 <HelpOutlineIcon />
               </IconButton>
             </Tooltip>

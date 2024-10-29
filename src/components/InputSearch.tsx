@@ -23,6 +23,9 @@ function InputSearch(props: InputSearchProps) {
       required
       onSubmit={handleSubmit}
       fullWidth
+      sx={{
+        color: "text.primary",
+      }}
     >
       <TextField
         variant="outlined"
@@ -35,7 +38,12 @@ function InputSearch(props: InputSearchProps) {
           },
           startAdornment: (
             <InputAdornment position="start">
-              <IconButton size="small" type="submit" edge="start">
+              <IconButton
+                size="small"
+                type="submit"
+                edge="start"
+                sx={{ color: "text.primary" }}
+              >
                 <SearchIcon />
               </IconButton>
             </InputAdornment>
@@ -44,6 +52,8 @@ function InputSearch(props: InputSearchProps) {
         size="small"
         sx={{
           width: "100%",
+          color: "text.primary",
+
           "& .MuiOutlinedInput-root": {
             borderRadius: "4px",
           },
