@@ -5,17 +5,17 @@ const theme = extendTheme({
   colorSchemes: {
     dark: {
       palette: {
-        primary: { main: "#1D2125" },
         text: {
           primary: "#9FADBC",
+          secondary: "#B6C2CF",
         },
       },
     },
     light: {
       palette: {
-        primary: { main: "#08479e" },
         text: {
           primary: common.white,
+          secondary: "#172B4D",
         },
       },
     },

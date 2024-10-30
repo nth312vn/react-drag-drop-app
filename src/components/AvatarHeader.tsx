@@ -58,7 +58,7 @@ export default function AvatarHeader() {
         </IconButton>
       </Tooltip>
       <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-        <MenuItem onClick={handleThemeOpen}>
+        <MenuItem onClick={handleThemeOpen} sx={{ color: "text.secondary" }}>
           <ListItemIcon>
             <SettingsBrightnessIcon fontSize="small" />
           </ListItemIcon>
@@ -86,6 +86,7 @@ export default function AvatarHeader() {
             onClick={() => {
               handleChangeTheme(ThemeMode.LIGHT);
             }}
+            sx={{ color: "text.secondary" }}
           >
             <ListItemIcon>
               <LightModeIcon fontSize="small" />
@@ -93,6 +94,7 @@ export default function AvatarHeader() {
             <ListItemText>Sáng</ListItemText>
           </MenuItem>
           <MenuItem
+            sx={{ color: "text.secondary" }}
             selected={mode === ThemeMode.DARK}
             onClick={() => {
               handleChangeTheme(ThemeMode.DARK);
@@ -104,6 +106,7 @@ export default function AvatarHeader() {
             <ListItemText>Tối</ListItemText>
           </MenuItem>
           <MenuItem
+            sx={{ color: "text.secondary" }}
             selected={mode === ThemeMode.SYSTEM}
             onClick={() => {
               handleChangeTheme(ThemeMode.SYSTEM);

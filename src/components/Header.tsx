@@ -5,6 +5,7 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import DropdownMenu from "./DropdownMenu";
 import InputSearch from "./InputSearch";
 import AvatarHeader from "./AvatarHeader";
+import { ThemeMode } from "../constants/theme";
 
 export default function Header() {
   return (
@@ -16,7 +17,8 @@ export default function Header() {
           height: "100%",
           justifyContent: "space-between",
           padding: "8px",
-          backgroundColor: "primary.main",
+          backgroundColor: (theme) =>
+            theme.palette.mode === ThemeMode.LIGHT ? "#08479e" : "#1D2125",
           color: "text.primary",
         }}
       >

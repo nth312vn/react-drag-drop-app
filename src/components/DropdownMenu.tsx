@@ -48,6 +48,7 @@ export default function DropdownMenu(props: DropdownMenuProps) {
               handleClose();
               option.callBack?.();
             }}
+            sx={{ color: "text.secondary" }}
             key={index}
             dense
           >
