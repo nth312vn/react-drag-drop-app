@@ -5,7 +5,7 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import DropdownMenu from "./DropdownMenu";
 import InputSearch from "./InputSearch";
 import AvatarHeader from "./AvatarHeader";
-import { ThemeMode } from "../constants/theme";
+import { isLightMode } from "../utils/theme.utils";
 
 export default function Header() {
   return (
@@ -18,7 +18,7 @@ export default function Header() {
           justifyContent: "space-between",
           padding: "8px",
           backgroundColor: (theme) =>
-            theme.palette.mode === ThemeMode.LIGHT ? "#08479e" : "#1D2125",
+            isLightMode(theme.palette.mode) ? "#08479e" : "#1D2125",
           color: "text.primary",
         }}
       >
@@ -33,7 +33,7 @@ export default function Header() {
               sx={{
                 borderRadius: "2px",
                 color: "text.primary",
-                "&:hover": { backgroundColor: "#091E4224" },
+                "&:hover": { backgroundColor: "##ffffff33" },
                 "&:active": {
                   backgroundColor: "#E9F2FF",
                 },
@@ -132,17 +132,36 @@ export default function Header() {
           </Box>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             <Tooltip TransitionComponent={Zoom} title="Notification">
-              <IconButton sx={{ color: "text.primary" }}>
+              <IconButton
+                size="small"
+                sx={{
+                  color: "text.primary",
+                  "&:hover": { backgroundColor: "#ffffff33" },
+                }}
+              >
                 <Badge color="primary" variant="dot" invisible={false}>
                   <NotificationsNoneIcon />
                 </Badge>
               </IconButton>
             </Tooltip>
           </Box>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box
+            sx={{
+              display: {
+                xs: "none",
+                sm: "block",
+              },
+            }}
+          >
             <Tooltip TransitionComponent={Zoom} title="Help">
-              <IconButton sx={{ color: "text.primary" }}>
-                <HelpOutlineIcon />
+              <IconButton
+                sx={{
+                  color: "text.primary",
+                  "&:hover": { backgroundColor: "#ffffff33" },
+                }}
+                size="small"
+              >
+                <HelpOutlineIcon sx={{}} />
               </IconButton>
             </Tooltip>
           </Box>

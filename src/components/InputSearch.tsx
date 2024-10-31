@@ -6,7 +6,7 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
-import { ThemeMode } from "../constants/theme";
+import { isLightMode } from "../utils/theme.utils";
 export interface InputSearchProps {
   onSubmit?: (text: string) => void;
 }
@@ -50,12 +50,14 @@ function InputSearch(props: InputSearchProps) {
             </InputAdornment>
           ),
         }}
+        autoComplete="off"
         size="small"
         sx={{
           width: "100%",
           color: "text.primary",
           padding: 0,
           backgroundColor: "#fff3",
+          borderRadius: "4px",
 
           "& .MuiOutlinedInput-root": {
             borderRadius: "4px",
@@ -65,9 +67,9 @@ function InputSearch(props: InputSearchProps) {
             borderRadius: "4px",
             boxSizing: "border-box",
             backgroundColor: (theme) =>
-              theme.palette.mode === ThemeMode.LIGHT ? "#FFFFFF" : "#22272b",
+              isLightMode(theme.palette.mode) ? "#FFFFFF" : "#22272b",
             color: (theme) =>
-              theme.palette.mode === ThemeMode.LIGHT ? "#22272b" : "#FFFFFF",
+              isLightMode(theme.palette.mode) ? "#22272b" : "#FFFFFF",
           },
         }}
       />

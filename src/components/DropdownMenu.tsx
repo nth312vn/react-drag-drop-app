@@ -37,6 +37,9 @@ export default function DropdownMenu(props: DropdownMenuProps) {
         endIcon={<KeyboardArrowDownIcon />}
         sx={{
           color: "text.primary",
+          "&:hover": {
+            backgroundColor: "#ffffff33",
+          },
         }}
       >
         {title}
